@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int n,arr[100],min=arr[0],temp,min_index;
+
+   printf("Enter size of array");
+   scanf("%d",&n);
+
+   //enter the array elements
+
+    for(int i=0;i<n;i++){
+    scanf("%d", &arr[i]);
+   }
+
+   for(int count=0;count<n-1;count++)
+    {
+        min_index=count;
+    for(int i=count;i<=n-1;i++)
+        {
+        if(arr[i]<arr[min_index])
+                      {
+                min_index=i;
+                      }
+        }
+
+    temp=arr[min_index];
+    arr[min_index]=arr[count];
+    arr[count]=temp;
+    min=arr[count];
+   }
+
+   for(int i=0;i<n;i++)
+   {
+    printf("%d ",arr[i]);
+   }
+
+
+    return 0;
+}
